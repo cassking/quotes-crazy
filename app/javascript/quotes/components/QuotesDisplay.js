@@ -80,10 +80,10 @@ render () {
   return(
 
 <div>
-  <Link to={`/?quote=${nextQuoteId}`}>Next</Link>
-  <h1>quote:{this.state.quote.quote}</h1>
-  <h2>author:{this.state.quote.author}</h2>
-  <h3>category:{this.state.quote.category}</h3>
+  <Link className="next-quote" to={`/?quote=${nextQuoteId}`}>Next</Link>
+  <h1>{this.state.quote.quote}</h1>
+  <h2>author:<br />{this.state.quote.author}</h2>
+  <h3>category: {this.state.quote.category}</h3>
 
 </div>
 
