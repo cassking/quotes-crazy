@@ -13,10 +13,6 @@ class QuotesDisplay extends React.Component {
     this.fetchQuote = this.fetchQuote.bind(this);
     this.setQuoteIdFromQueryString = this.setQuoteIdFromQueryString.bind(this)
   }
-
-
-
-
 // We are interested in the contents of the location object,
 // as it gives us the query string part of the path
 // (called search in React Router terms).
@@ -28,6 +24,7 @@ setQuoteIdFromQueryString(myquerystr){
   console.log('querys', myquerystr)
   this.qsParams = queryString.parse(myquerystr)//uses query-string gem
 if (this.qsParams.quote) {
+  console.log('this.qsParams.quote',this.qsParams.quote)
     // assign quote ID from the URL's query string
     this.quoteId=Number(this.qsParams.quote)
   } else{
@@ -50,7 +47,7 @@ fetchQuote(id){
    //https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5
   axios.get(`api/quotes/${id}`)
     .then(response => {
-      console.log('response', response)
+      console.log('response', response.data)
       this.setState({quote: response.data});
     })
     .catch(error => {
@@ -63,8 +60,13 @@ componentDidMount(){
   //this.props.location.search
   // parse the query parameters  using an existing
   // package such as query-string.
+  console.log('props', this.props.location)
+  // props we  get from roiuter this.props.location are
+  // hash:,key:,pathname:,search:,state:
   this.setQuoteIdFromQueryString(this.props.location.search)
+  console.log('this.quoteId', this.quoteId)
   this.fetchQuote(this.quoteId)
+
 }
 
 componentWillReceiveProps(nextProps){
