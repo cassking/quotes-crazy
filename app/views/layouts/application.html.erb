@@ -34,7 +34,7 @@
       <%= value %>
     </div>
   <%- end -%>
-
+ <div id="quotes" data-starting-quote-id="<%= @first_quote_id %>"></div>
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>

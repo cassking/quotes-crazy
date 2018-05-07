@@ -3,11 +3,14 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "4.0.0-pre.2",
+    "axios": "^0.18.0",
     "babel-loader": "^7.1.4",
     "babel-preset-react": "^6.24.1",
     "prop-types": "~15.6.0",
+    "query-string": "^6.1.0",
     "react": "~15.4.2",
-    "react-dom": "~15.4.2"
+    "react-dom": "~15.4.2",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
