@@ -2,7 +2,7 @@
 
 # Quotes-crazy
 
-#### A demo to show how to use React with Rails 5.1 built-in Webpacker gem and react-router
+#### small app using React with Rails 5.1 and built-in Webpacker, axios, react-router, query-string
 
 ## Stacks
 
