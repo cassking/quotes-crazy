@@ -1,43 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Quotes Crazy</title>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>Quotes Crazy</title>
+    <%= csrf_meta_tags %>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <link href="http://fonts.googleapis.com/css?family=Oswald:700|Droid+Serif:400,700italic" rel="stylesheet" type="text/css" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
-      <!-- Following will make the react components availabe to our layout -->
-    <%= javascript_pack_tag 'application' %>
-</head>
-<body>
+  </head>
 
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">Quotes Crazy</a></h1>
-      </li>
-    </ul>
-
-    <section class="top-bar-section">
-      <ul class="right">
-
-      </ul>
-    </section>
-  </nav>
-
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
- <div id="quotes" data-starting-quote-id="<%= @first_quote_id %>"></div>
-  <%= yield %>
-
-  <%= javascript_include_tag 'application' %>
-  <%= yield :extra_footer %>
-</body>
+  <body>
+    <%= yield %>
+  </body>
 </html>
