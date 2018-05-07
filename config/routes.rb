@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   #     resources :texts, only: [:create]
   #   end
   # end
+  namespace :api, defaults: { format: :json } do
+    resources :quotes, only: [ :show ]
+  end
 end
