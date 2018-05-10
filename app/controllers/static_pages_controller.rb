@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  def home
+  def index
     @first_quote_id = Quote.first.id
   end
 end
