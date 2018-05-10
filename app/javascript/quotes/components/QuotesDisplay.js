@@ -76,13 +76,28 @@ componentWillReceiveProps(nextProps){
   this.fetchQuote(this.quoteId)
 }
 render () {
-  const nextQuoteId = Number(this.state.quote.id) +1
+  const quote = this.state.quote
+  const nextQuoteId = quote.next_id
+  const previousQuoteId =quote.previous_id
 
 
   return(
 
 <div>
-  <Link className="next-quote" to={`/?quote=${nextQuoteId}`}>Next</Link>
+  {/* checkout the info on conditional rendering
+  https://reactjs.org/docs/conditional-rendering.html
+   */}
+   {/* if previousQuoteId is true then show it */}
+   {previousQuoteId &&
+  <Link className="next-quote"
+    to={`/?quote=${previousQuoteId}`}>Previous Quote
+  </Link>
+}&nbsp; | &nbsp;
+{nextQuoteId &&
+<Link className="next-quote"
+ to={`/?quote=${nextQuoteId}`}>Next Quote
+</Link>
+}
   <h1>{this.state.quote.quote}</h1>
   <h2>author:<br />{this.state.quote.author}</h2>
   <h3>category: {this.state.quote.category}</h3>
