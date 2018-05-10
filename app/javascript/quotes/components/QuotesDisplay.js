@@ -61,7 +61,7 @@ componentDidMount(){
   // parse the query parameters  using an existing
   // package such as query-string.
   console.log('props', this.props.location)
-  // props we  get from roiuter this.props.location are
+  // props we  get from router this.props.location are
   // hash:,key:,pathname:,search:,state:
   this.setQuoteIdFromQueryString(this.props.location.search)
   console.log('this.quoteId', this.quoteId)

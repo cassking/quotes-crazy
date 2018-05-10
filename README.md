@@ -17,11 +17,14 @@
 - react-router-dom ^4.2.2
 
 [ DEMO here ]https://quotescrazy.herokuapp.com/
+#why Axios?
+I am experimenting using the axios  to do the requests. I discovered that it is a tad easier to get the data with axios than fetch ( you can read about it here https://medium.com/@sahilkkrazy/fetch-vs-axios-http-request-c9afa43f804e). Im also using query-string axios. Apparently, for web stuff try using axios, but if using React native, fetch seems to be a better fit.
 
 #To run locally
 `yarn`
 `bundle install`
 make sure you have `foreman` installed
+( yeah just discovered the magic of foreman and a Procfile combo!)
 (`gem install foreman`) https://github.com/ddollar/foreman
 `foreman start -f Procfile.dev -p 3000`
 (this will start both you rails and your webpack servers all at once)
