@@ -23,6 +23,9 @@ Phase 1 will be simply getting random quotes via a seed file via a next and prev
 
 Phase 2 will be getting quotes directly from the `andruxnet-random-famous-quotes` api via links and using location history to move next and previous
 
+#why the TLDR readme?
+because axios, Router and query-string Im not so comfy with so i figured, but explaining it long-hand, i would understand it myself better and maybe help someone else grok it as well
+
 #why Axios?
 I am experimenting using the axios  to do the requests. I discovered that it is a tad easier to get the data with axios than fetch ( you can read about it here https://medium.com/@sahilkkrazy/fetch-vs-axios-http-request-c9afa43f804e). Im also using query-string axios. Apparently, for web stuff try using axios, but if using React native, fetch seems to be a better fit.
 
@@ -62,3 +65,13 @@ The `quotes.js` file has one line `import 'quotes'`. This little file  just tell
 Here is where it gets interesting for me.  In `App`, and I confess, Im  not comfortable with `Router` .... this is a main part of this app. It renders React components depending on the current URL in the browser. App is just a wrapper for Router and passes the `startingQuoteId` as prop down through Router and Route down to `QuotesDisplay`.
 
 The Router tracks the browser address, renders a route based on that, that route then renders `QuotesDisplay`. The Router props are handed down to QuotesDisplay via `{...routeProps}` and the `firstQuoteId`
+
+#QuotesDisplay Component and the Lifecycles used
+
+the first thing that happens is the constructor and `componentWillMount` runs. componentWillMount calls `setQuoteIdFromQueryString()` and the `setQuote()` functions.
+
+after that, the QuotesDisplay component is rendered on the DOM. (first time around this.state.quote is empty so nothing is rendered)
+
+`setQuoteIdFromQueryString()` parses the query string (axios query-string) and stores the id fo the quote as `quoteId`. Im learning that the Route object serves a number of props via the Route via `this.props.location` including `hash:,key:,pathname:,search:,state:`. in this case use the `search` property of that object.
+
+the GET request is made via axios and it targets the quote id set prior as `quoteID`, and once the promise is resolved setState() saves the quote object from JSON on the quote property of the component state via `this.state.quote`
