@@ -54,3 +54,5 @@ The `quotes.js` file has one line `import 'quotes'`. This little file  just tell
 `index.js` is where we import `react` and `react-dom` and the main App component.
 
 Here is where it gets interesting for me.  In `App`, and I confess, Im  not comfortable with `Router` .... this is a main part of this app. It renders React components depending on the current URL in the browser. App is just a wrapper for Router and passes the `startingQuoteId` as prop down through Router and Route down to `QuotesDisplay`.
+
+The Router tracks the browser address, renders a route based on that, that route then renders `QuotesDisplay`. The Router props are handed down to QuotesDisplay via `{...routeProps}` and the `firstQuoteId`

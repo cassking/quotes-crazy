@@ -29,7 +29,7 @@ if (this.qsParams.quote) {
     this.quoteId=Number(this.qsParams.quote)
   } else{
     //if query string not found default to 1
-    this.quoteId = 1
+    this.quoteId = this.props.startingQuoteId
      // update URL in browser to reflect current quote in query string
      this.props.history.push(`/?quote=${this.quoteId}`)
      //React Router already parses the location
@@ -41,11 +41,19 @@ if (this.qsParams.quote) {
 }
 
 fetchQuote(id){
+  //below for next phase getting quotes directly from api
+  const config = {
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'X-Mashape-Key': 'x4KwcPRjkbmshOPgAiWYwr0B4f7vp1wrN5rjsnwMAckYt6AGC4'
+ }
+};
    //the corresponding quote from  database
    //then update state
    //fetch vs axios here
    //https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5
-  axios.get(`api/quotes/${id}`)
+  axios.get(`api/quotes/${id}`, config)
+  //axios.get(`https://andruxnet-random-famous-quotes.p.mashape.com/?cat=`, config)
     .then(response => {
       console.log('response', response.data)
       this.setState({quote: response.data});

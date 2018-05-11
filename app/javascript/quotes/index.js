@@ -5,6 +5,8 @@ import App from './components/App'
 const quotes = document.querySelector('#quotes')
 
 ReactDOM.render(
+  // ReactDOM.render(<App />, quotes)
+
   <App
     // target the custom
     // data-starting-quote-id
