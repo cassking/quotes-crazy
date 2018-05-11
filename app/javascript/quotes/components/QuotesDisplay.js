@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import axios from 'axios';
 
-
+// here we use anES6 class to define a component:
 class QuotesDisplay extends React.Component {
   constructor() {
     super();

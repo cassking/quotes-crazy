@@ -66,6 +66,9 @@ Here is where it gets interesting for me.  In `App`, and I confess, Im  not comf
 
 The Router tracks the browser address, renders a route based on that, that route then renders `QuotesDisplay`. The Router props are handed down to QuotesDisplay via `{...routeProps}` and the `firstQuoteId`
 
+just a quick note on this syntax `{...props}`: just using the spread operator
+read more here https://reactjs.org/docs/components-and-props.html
+
 #QuotesDisplay Component and the Lifecycles used
 
 the first thing that happens is the constructor and `componentWillMount` runs. componentWillMount calls `setQuoteIdFromQueryString()` and the `setQuote()` functions.
