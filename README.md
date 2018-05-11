@@ -17,6 +17,12 @@
 - react-router-dom ^4.2.2
 
 [ DEMO here ]https://quotescrazy.herokuapp.com/
+
+##Phase 1 and 2
+Phase 1 will be simply getting random quotes via a seed file via a next and prev link
+
+Phase 2 will be getting quotes directly from the `andruxnet-random-famous-quotes` api via links and using location history to move next and previous
+
 #why Axios?
 I am experimenting using the axios  to do the requests. I discovered that it is a tad easier to get the data with axios than fetch ( you can read about it here https://medium.com/@sahilkkrazy/fetch-vs-axios-http-request-c9afa43f804e). Im also using query-string axios. Apparently, for web stuff try using axios, but if using React native, fetch seems to be a better fit.
 
