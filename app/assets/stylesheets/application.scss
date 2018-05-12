@@ -24,7 +24,7 @@ body {
   padding: 0;
   background-color: #f2f2e2;
   text-align: center;
-  background: url("https://images.unsplash.com/photo-1467094568967-95f87ee9c873?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=51fe3b51e0512cc9fe5115040716205b");
+  background: url("https://images.unsplash.com/photo-1465935607384-d6a9087be24a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=97537e4d55cb4c1ba67612bc79c71cc2&auto=format&fit=crop&w=1349&q=80");
   background-size: cover;
   background-attachment: fixed;
 font-family: 'Alice', serif;
@@ -39,6 +39,8 @@ font-family: 'Alice', serif;
 
 a {
   font-family: 'Alice', serif;
+  font-weight: bold;
+
   // font-family: 'Oswald', sans-serif;
 }
 h1 {
@@ -104,6 +106,7 @@ p, ul, ul li, li {
 .top-bar {
   background:none;
   text-align:center;
+  margin-bottom: 10%;
 }
 .top-bar .title-area {
   float: none;
@@ -116,4 +119,10 @@ p, ul, ul li, li {
   .top-bar .name span a {
     width: 100%;
     font-size: 40px;
+  }
+  .top-bar .name h1 a{
+    padding: 50px;
+    font-family: 'Alice', serif;
+    font-weight: bold;
+
   }

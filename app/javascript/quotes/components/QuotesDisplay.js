@@ -104,7 +104,6 @@ render () {
 
   <h1>{this.state.quote.quote}</h1>
   <h2>author:<br />{this.state.quote.author}</h2>
-  <h3>category: {this.state.quote.category}</h3>
   {nextQuoteId &&
   <Link className="next-quote"
    to={`/?quote=${nextQuoteId}`}>Next Quote
