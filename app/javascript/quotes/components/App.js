@@ -12,7 +12,7 @@ const App = (props) => (
 	    path='/'
       startingQuoteId={props.startingQuoteId}
       render={(routeProps)=> <QuotesDisplay
-        // extract all the properties of 
+        // extract all the properties of
         // props using spread operator
         {...props}
         {...routeProps} />}

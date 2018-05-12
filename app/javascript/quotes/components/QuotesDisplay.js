@@ -100,16 +100,16 @@ render () {
   <Link className="next-quote"
     to={`/?quote=${previousQuoteId}`}>Previous Quote
   </Link>
-}&nbsp; | &nbsp;
-{nextQuoteId &&
-<Link className="next-quote"
- to={`/?quote=${nextQuoteId}`}>Next Quote
-</Link>
 }
+
   <h1>{this.state.quote.quote}</h1>
   <h2>author:<br />{this.state.quote.author}</h2>
   <h3>category: {this.state.quote.category}</h3>
-
+  {nextQuoteId &&
+  <Link className="next-quote"
+   to={`/?quote=${nextQuoteId}`}>Next Quote
+  </Link>
+  }
 </div>
 
   )

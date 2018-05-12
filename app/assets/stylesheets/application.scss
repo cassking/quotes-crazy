@@ -16,15 +16,19 @@
 
  */
  @import "quotes";
-  @import "font-awesome";
- body {
+@import "font-awesome";
+
+body {
  color: #676758;
   margin: 0;
   padding: 0;
   background-color: #f2f2e2;
   text-align: center;
-
-  font-family: 'Droid Serif', serif;
+  background: url("https://images.unsplash.com/photo-1467094568967-95f87ee9c873?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=51fe3b51e0512cc9fe5115040716205b");
+  background-size: cover;
+  background-attachment: fixed;
+font-family: 'Alice', serif;
+  // font-family: 'Droid Serif', serif;
   font-size: 15px;
   line-height: 1.5;
   /* color: #2b2b2b;
@@ -34,25 +38,33 @@
 }
 
 a {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Alice', serif;
+  // font-family: 'Oswald', sans-serif;
 }
 h1 {
-	font-family: 'Oswald', sans-serif;
-	font-weight: 700;
-	line-height: 51px;
-	font-size: 46px;
-	margin: 20px;
+	// font-family: 'Oswald', sans-serif;
+	// font-weight: 700;
+	// line-height: 51px;
+	// font-size: 46px;
+	// margin: 20px;
+  font-family: 'Playfair Display', serif;
+  	font-weight: 900;
+    line-height: 46px;
+    font-size: 46px;
+    margin: 0 0 43px 0;
 	}
 h2 {
-	font-family: 'Droid Serif', serif;
+  font-family: 'Alice', serif;
+	// font-family: 'Droid Serif', serif;
 	font-weight: 400;
-	font-style: italic;
+	// font-style: italic;
 	font-size: 20px;
 	line-height: 23px;
 	margin: 0 0 23px 0;
 	}
   h3{
-  	font-family: 'Droid Serif', serif;
+    font-family: 'Alice', serif;
+  	// font-family: 'Droid Serif', serif;
   	font-weight: 400;
   	font-style: italic;
   	font-size: 16px;
@@ -60,7 +72,8 @@ h2 {
   	margin: 0 0 23px 0;
   	}
 p, ul, ul li, li {
-	font-family: 'Droid Serif', serif;
+  font-family: 'Alice', serif;
+	// font-family: 'Droid Serif', serif;
 	font-size: 15px;
 	margin: 0 0 23px 0;
 	}
@@ -88,7 +101,13 @@ p, ul, ul li, li {
     	font-family: 'Oswald', sans-serif;
     font-weight: 600;
   }
-
+.top-bar {
+  background:none;
+  text-align:center;
+}
+.top-bar .title-area {
+  float: none;
+}
   .top-bar .name h1 a,
   .top-bar .name h2 a,
   .top-bar .name h3 a,
@@ -96,4 +115,5 @@ p, ul, ul li, li {
   .top-bar .name p a,
   .top-bar .name span a {
     width: 100%;
+    font-size: 40px;
   }
