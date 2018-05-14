@@ -48,6 +48,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails', group: [:development, :test]
+gem 'pry-remote', group:[:development, :test]
 gem 'jquery-rails'
 gem 'rspec-rails', group: [:development, :test]
 gem 'capybara', group: [:development, :test]

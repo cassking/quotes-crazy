@@ -13,6 +13,7 @@ class QuotesDisplay extends React.Component {
     this.fetchQuote = this.fetchQuote.bind(this);
     this.setQuoteIdFromQueryString = this.setQuoteIdFromQueryString.bind(this)
   }
+
 // We are interested in the contents of the location object,
 // as it gives us the query string part of the path
 // (called search in React Router terms).
@@ -63,6 +64,16 @@ fetchQuote(id){
     })
 
 }
+
+
+  // is invoked after receiving the props, and before rendering
+  componentWillReceiveProps(nextProps){
+    //clicking next need to rerender w diff props
+    //user <link> to ensure shareable link for ea quote
+    this.setQuoteIdFromQueryString(nextProps.location.search)
+    this.fetchQuote(this.quoteId)
+  }
+
 componentDidMount(){
   //use query-string to parse the props.location.search
   //this.props.location.search
@@ -77,12 +88,7 @@ componentDidMount(){
 
 }
 
-componentWillReceiveProps(nextProps){
-  //clicking next need to rerender w diff props
-  //user <link> to ensure shareable link for ea quote
-  this.setQuoteIdFromQueryString(nextProps.location.search)
-  this.fetchQuote(this.quoteId)
-}
+
 render () {
   const quote = this.state.quote
   const nextQuoteId = quote.next_id
@@ -97,7 +103,7 @@ render () {
    */}
    {/* if previousQuoteId is true then show it */}
    {previousQuoteId &&
-  <Link className="next-quote"
+  <Link className="next-quote link-previous"
     to={`/?quote=${previousQuoteId}`}>Previous Quote
   </Link>
 }
@@ -105,7 +111,7 @@ render () {
   <h1>{this.state.quote.quote}</h1>
   <h2>author:<br />{this.state.quote.author}</h2>
   {nextQuoteId &&
-  <Link className="next-quote"
+  <Link className="next-quote link-next"
    to={`/?quote=${nextQuoteId}`}>Next Quote
   </Link>
   }
