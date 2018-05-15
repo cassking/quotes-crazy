@@ -18,6 +18,4 @@ class Quote < ApplicationRecord
   def previous_id
     self.class.where('id < ?', self.id).pluck(:id).last
   end
-
-  binding.pry
 end

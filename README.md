@@ -45,10 +45,10 @@ The correspondent view renders a `<div id="quotes">` in the index.html.erb file 
 
 The `Quote` model in quote.rb we handle the `text` and `author` fields. the model also handles the `next_id` and `previous_id` methods.
 
-#a Rails and virtual attributes aside
+#a Rails and virtual attributes-- an aside
 In assembling this I learned just a bit about Rails virtual attributes. If you peek at `quote.rb` you will see two
 methods and basically they define two methods to find next and previous where we are only plucking  (example `Model.where('id < (?)', [array of values]`) or (`Model.where('id > (?)', [array of values]`)
-Pluck method gives us an array of values of ids , then we grab either first or last.
+Pluck method gives us an array of values of ids , then we grab either first or last, the virtual attributes for a quote's predecessor and it's successor.
 
 
 The `QuotesController` namespaced under /api provides the show REST action so we can make a `GET` request to say `/api/quotes/12`. Return a JSON representaion of the quote using `jbuilder ` (a gem already part of Rails). Setting the default format as `json ` routes.rb(`  namespace :api, defaults: { format: :json } do
@@ -82,7 +82,7 @@ The `QuotesDisplay` component is rendered by App.js; well, technically it is ren
 
 after that, the QuotesDisplay component is rendered on the DOM via `componentDidMount()` when page is loaded.  The page renders with different props as the next or previous links are clicked and this is where `componentWillReceiveProps(nextProps)` comes in handy.
 
-The links are actually React components that can make for shareable links iwth a unique URL.
+The links are actually React components that can make for shareable links with a unique URL.
 
 `setQuoteIdFromQueryString()` parses the query string (axios query-string) and stores the id of the quote as `quoteId`. Im learning that the Route object serves a number of props via the Route via `this.props.location` including `hash:,key:,pathname:,search:,state:`. in this case use the `search` property of that object.
 

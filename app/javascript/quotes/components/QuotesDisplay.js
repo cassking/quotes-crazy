@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import queryString from 'query-string';
 import axios from 'axios';
 
@@ -12,6 +12,7 @@ class QuotesDisplay extends React.Component {
     }
     this.fetchQuote = this.fetchQuote.bind(this);
     this.setQuoteIdFromQueryString = this.setQuoteIdFromQueryString.bind(this)
+    this.redirectToTarget = this.redirectToTarget.bind(this);
   }
 
 // We are interested in the contents of the location object,
@@ -61,6 +62,8 @@ fetchQuote(id){
     })
     .catch(error => {
       console.log(error)
+      //in case of error, show first quote
+      this.redirectToTarget()
     })
 
 }
@@ -87,7 +90,9 @@ componentDidMount(){
   this.fetchQuote(this.quoteId)
 
 }
-
+redirectToTarget = () => {
+    this.props.history.push(`/`)
+  }
 
 render () {
   const quote = this.state.quote
