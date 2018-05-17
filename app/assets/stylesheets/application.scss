@@ -43,7 +43,7 @@ a {
 
   // font-family: 'Oswald', sans-serif;
 }
-h1 {
+h1 ,.quote-open,.quote-close{
 	// font-family: 'Oswald', sans-serif;
 	// font-weight: 700;
 	// line-height: 51px;
@@ -108,7 +108,7 @@ p, ul, ul li, li {
 .top-bar {
   background:none;
   text-align:center;
-  margin-bottom: 10%;
+  margin-bottom: 7%;
 }
 .top-bar .title-area {
   float: none;
@@ -120,10 +120,10 @@ p, ul, ul li, li {
   .top-bar .name p a,
   .top-bar .name span a {
     width: 100%;
-    font-size: 40px;
+    font-size: 30px;
   }
   .top-bar .name h1 a{
-    padding: 50px;
+    // padding: 50px;
     font-family: 'Alice', serif;
     font-weight: bold;
 

@@ -2,7 +2,21 @@
   margin-top: 40px;
 
 }
-.next-quote {
+.quote-footer {
+  bottom:0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+  text-align: center;
+}
+.quote-footer a {
+  position: relative;
+  display: inline-block;
+}
+.next-quote, .quote-footer {
+  position:absolute;
   color: red;
   // font-family: 'Alice', serif;
   // font-family: 'Oswald', sans-serif;
@@ -10,58 +24,47 @@
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
 
-
 }
 
 .quote-container {
+  text-align:center;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
   display:flex;
   height: 90vh;
-  justify-content: center;
   align-items: center;
  }
 
-.quote-text {
+.quote-text{
+  display:inline-block;
   text-align: center;
   font-size: 1.2em;
   font-weight: bold;
   margin-top: 10px;
+  color: #000;
 }
 
 .quote {
+  margin: 0 auto;
   width: 400px;
   min-width: 200px;
   padding: 10px;
 }
 
 .quote-text {
+  display:inline-block;
+  width: 80%;
+  margin: 0 auto;
   font-size: 1.3em;
 }
 
 .quote-author {
+  margin: 0 auto;
   margin-top: 20px;
-  text-align: right;
 }
 
-.quote-open, .quote-close {
-  opacity: 0.8;
-  font-family: serif;
-}
-
-.quote-open {
-  float: left;
-  margin-right: 10px;
-  font-size: 4em;
-  font-weight: bold;
-}
-
-.quote-close {
-  float: right;
-  margin-left: 10px;
-  font-size: 4em;
-  font-weight: bold;
-}
-
-.link-next, .link-previous {
+.link-next, .link-previous, .footer {
   transition: all .1s ease-in-out;
   color: #000;
   font-size: 1.5em;
@@ -74,6 +77,14 @@
     opacity: 0.7;
   }
 }
+.link-next {
+  right:-40px;
+}
+.link-previous {
+  left: -40px;
+
+}
+
 
 #footer {
   position: absolute;

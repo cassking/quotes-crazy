@@ -8,9 +8,6 @@ ReactDOM.render(
   // ReactDOM.render(<App />, quotes)
 
   <App
-    // target the custom
-    // data-starting-quote-id
-    // from index
     startingQuoteId={quotes.dataset.startingQuoteId} />,
     quotes
   )
